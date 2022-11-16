@@ -1,12 +1,17 @@
 package br.com.fatecararas.notesapi.service.impl
 
+import br.com.fatecararas.notesapi.domain.entity.Category
+import br.com.fatecararas.notesapi.domain.repository.CategoryRepository
 import org.springframework.stereotype.Service
 
 @Service
-class CategoryService(private val repository: CategoryRepository ): ICategoryService {
+class CategoryService(private val repository: CategoryRepository) {
 
-    override fun save(category: Category): Category = repository.save(category)
+    fun salvar(category: Category): Category {
+        return repository.save(category)
+    }
 
-    override fun findAll(): List<Category> = repository.findAll()
-
+    fun buscarTodos(): List<Category> {
+        return repository.findAll()
+    }
 }

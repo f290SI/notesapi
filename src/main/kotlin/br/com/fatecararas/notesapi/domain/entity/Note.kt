@@ -7,12 +7,17 @@ import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.JoinColumn
 import javax.persistence.ManyToOne
+import javax.persistence.Table
 
 @Entity
 data class Note(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long,
-    val note: String,
-    val data: LocalDateTime
+    var id: Long,
+    var note: String,
+    var data: LocalDateTime,
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    var category: Category
 )
