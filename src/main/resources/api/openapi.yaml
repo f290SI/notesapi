@@ -1,0 +1,8 @@
+openapi: 3.0.1
+components:
+info:
+  title: "Api de anotações Kotlin"
+  description: "Lorem ipsum dolor sit amet..."
+  contact:
+    email: "bzr4@icloud.com"
+  version: "1.0"
