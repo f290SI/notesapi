@@ -9,7 +9,7 @@ import javax.persistence.OneToMany
 import javax.print.attribute.IntegerSyntax
 
 @Entity
-class Category {
+class Category() {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,10 +20,7 @@ class Category {
     @OneToMany(mappedBy = "category")
     var notes: List<Note> = emptyList()
 
-    constructor(id: Int, description: String) {
-        this.id
+    constructor(description: String) : this() {
         this.description = description
     }
-
-    constructor(){}
 }

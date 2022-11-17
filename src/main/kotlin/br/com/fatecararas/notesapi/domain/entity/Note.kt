@@ -10,14 +10,20 @@ import javax.persistence.ManyToOne
 import javax.persistence.Table
 
 @Entity
-data class Note(
+class Note() {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long,
-    var note: String,
-    var data: LocalDateTime,
+    var id: Long = 0L
 
     @ManyToOne
     @JoinColumn(name = "category_id")
-    var category: Category
-)
+    lateinit var category: Category
+    lateinit var note: String
+    var data: LocalDateTime = LocalDateTime.now()
+
+    constructor(note: String, category: Category) : this() {
+        this.note = note
+        this.category = category
+    }
+
+}

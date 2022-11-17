@@ -1,19 +1,18 @@
 package br.com.fatecararas.notesapi.api.dto
 
+import br.com.fatecararas.notesapi.domain.entity.Category
 import java.time.LocalDateTime
 
-class NoteDTO {
-    private var id: Long = 0L
-    private var note: String = ""
-    private var data: LocalDateTime = LocalDateTime.now()
+class NoteDTO() {
+    var id: Long = 0L
+    var note: String = ""
+    var data: LocalDateTime = LocalDateTime.now()
+    lateinit var category: CategoryDTO
 
-    constructor(id: Long, note: String, data: LocalDateTime) {
-        this.id = id
+    constructor(note: String, categoryDTO: CategoryDTO) : this() {
         this.note = note
-        this.data = data
+        this.category = categoryDTO
     }
-
-    constructor(){}
 }
 
 

@@ -9,6 +9,12 @@ class AppConfig {
 
     @Bean
     fun getModelMapper(): ModelMapper {
-        return ModelMapper()
+
+        val modelMapper = ModelMapper()
+
+        modelMapper.configuration
+            .setFieldMatchingEnabled(true).fieldAccessLevel = org.modelmapper.config.Configuration.AccessLevel.PRIVATE
+
+        return modelMapper
     }
 }

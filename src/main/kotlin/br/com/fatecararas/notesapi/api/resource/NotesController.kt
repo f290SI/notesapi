@@ -29,7 +29,7 @@ class NotesController(
             .collect(Collectors.toList())
     }
 
-    @PostMapping("/note")
+    @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
     fun create(@RequestBody note: Note): Note {
         return repository.save(note)

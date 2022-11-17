@@ -17,4 +17,7 @@ class CategoryController(private val service: CategoryService) {
     fun getAll(): List<Category> {
         return service.buscarTodos()
     }
+
+    //16.11.22
+    //Julio, Camila, Guilherme, Ricardo,Bruna, Willian, Vitor, Rubens, Jose Carlos
 }
